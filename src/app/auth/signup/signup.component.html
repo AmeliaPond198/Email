@@ -1,1 +1,17 @@
-<p>signup works!</p>
+<h3>Create an account</h3>
+<form class="example-form" [formGroup]="authForm">
+    <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password">
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+        <mat-label>Password Confirmation</mat-label>
+        <input matInput formControlName="passwordConfirmation">
+    </mat-form-field>
+</form>
