@@ -2,17 +2,26 @@
 <form class="example-form" [formGroup]="authForm">
     <mat-form-field class="example-full-width">
         <mat-label>Username</mat-label>
-        <input matInput formControlName="username">
+        <input matInput formControlName="username" autocomplete="off">
+        <mat-error *ngIf="authForm.get('username').errors">
+            Please enter a valid username
+        </mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input matInput formControlName="password">
+        <input matInput type="password" formControlName="password" autocomplete="off">
+        <mat-error *ngIf="authForm.get('password').errors">
+            Please enter a valid password
+        </mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-label>Password Confirmation</mat-label>
-        <input matInput formControlName="passwordConfirmation">
+        <input matInput formControlName="passwordConfirmation" autocomplete="off">
+        <mat-error *ngIf="authForm.get('passwordConfirmation').errors">
+            Please enter a valid password
+        </mat-error>
     </mat-form-field>
     <button mat-flat-button color="primary">Submit</button>
 </form>
