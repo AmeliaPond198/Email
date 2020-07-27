@@ -18,10 +18,11 @@
 
     <mat-form-field class="example-full-width">
         <mat-label>Password Confirmation</mat-label>
-        <input matInput formControlName="passwordConfirmation" autocomplete="off">
+        <input matInput type="password" formControlName="passwordConfirmation" autocomplete="off">
         <mat-error *ngIf="authForm.get('passwordConfirmation').errors">
             Please enter a valid password
         </mat-error>
     </mat-form-field>
     <button mat-flat-button color="primary">Submit</button>
+    {{authForm.errors|json}}
 </form>
