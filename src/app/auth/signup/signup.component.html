@@ -4,7 +4,7 @@
         <mat-label>Username</mat-label>
         <input matInput formControlName="username" autocomplete="off">
         <mat-error *ngIf="authForm.get('username').errors">
-            Please enter a valid username
+            {{authForm.get('username').errors|json}}
         </mat-error>
     </mat-form-field>
 
@@ -12,7 +12,7 @@
         <mat-label>Password</mat-label>
         <input matInput type="password" formControlName="password" autocomplete="off">
         <mat-error *ngIf="authForm.get('password').errors">
-            Please enter a valid password
+            {{authForm.get('password').errors|json}}
         </mat-error>
     </mat-form-field>
 
@@ -20,7 +20,7 @@
         <mat-label>Password Confirmation</mat-label>
         <input matInput type="password" formControlName="passwordConfirmation" autocomplete="off">
         <mat-error *ngIf="authForm.get('passwordConfirmation').errors">
-            Please enter a valid password
+            {{authForm.get('passwordConfirmation').errors|json}}
         </mat-error>
     </mat-form-field>
     <button mat-flat-button color="primary">Submit</button>
