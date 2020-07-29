@@ -1,1 +1,26 @@
-<p>input works!</p>
+<mat-form-field class="example-full-width">
+    <mat-label>{{label}}</mat-label>
+    <input matInput [formControl]="control" [type]="inputType" autocomplete="off">
+    <mat-error *ngIf="control.errors">
+        <ng-container *ngIf="control.errors.required">
+            Value is required
+        </ng-container>
+        <div *ngIf="control.errors.minlength">
+            Value you entered is {{control.errors.minlength.actualLength}}
+            characters long, but it must be at least {{control.errors.minlength.requiredLength}} characters
+        </div>
+        <ng-container *ngIf="control.errors.maxlength">
+            Value you entered is {{control.errors.maxlength.actualLength}}
+            characters long, but it must be maximum {{control.errors.maxlength.requiredLength}} characters
+        </ng-container>
+        <ng-container *ngIf="control.errors.pattern">
+            Invalid format
+        </ng-container>
+        <ng-container *ngIf="control.errors.nonUniqueUsername">
+            Username is already taken
+        </ng-container>
+        <ng-container *ngIf="control.errors.noConnection">
+            Can't tell if username is taken
+        </ng-container>
+    </mat-error>
+</mat-form-field>

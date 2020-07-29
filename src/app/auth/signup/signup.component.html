@@ -1,28 +1,12 @@
 <h3>Create an account</h3>
 <form class="example-form" [formGroup]="authForm">
-    <mat-form-field class="example-full-width">
-        <mat-label>Username</mat-label>
-        <input matInput formControlName="username" autocomplete="off">
-        <mat-error *ngIf="authForm.get('username').errors">
-            {{authForm.get('username').errors|json}}
-        </mat-error>
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password" autocomplete="off">
-        <mat-error *ngIf="authForm.get('password').errors">
-            {{authForm.get('password').errors|json}}
-        </mat-error>
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-        <mat-label>Password Confirmation</mat-label>
-        <input matInput type="password" formControlName="passwordConfirmation" autocomplete="off">
-        <mat-error *ngIf="authForm.get('passwordConfirmation').errors">
-            {{authForm.get('passwordConfirmation').errors|json}}
-        </mat-error>
-    </mat-form-field>
+    <app-input inputType="text" label="Username" [control]="authForm.get('username')"></app-input>
+    <app-input inputType="password" label="Password" [control]="authForm.get('password')"></app-input>
+    <app-input inputType="password" label="Password Confirmation" [control]="authForm.get('passwordConfirmation')"></app-input>
+    <mat-error class="matchError" *ngIf="authForm.get('password').touched && authForm.get('passwordConfirmation').touched && authForm.errors">
+        <ng-container *ngIf="authForm.errors.passwordDontMatch">
+            Password and Password Confirmation must match
+        </ng-container>
+    </mat-error>
     <button mat-flat-button color="primary">Submit</button>
-    {{authForm.errors|json}}
 </form>

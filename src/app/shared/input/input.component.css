@@ -1,0 +1,8 @@
+.example-full-width {
+    width: 100%;
+  }
+
+  :host{
+    display: block;
+    margin-bottom: 1em;
+  }
