@@ -1,0 +1,13 @@
+.navBarItems {
+    text-decoration: none;
+    color: inherit;
+    margin: 0 10px;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+}
+.active {
+    font-weight: bold;
+}

@@ -11,3 +11,7 @@
 .matchError{
   margin-bottom: 1em;
 }
+
+:host{
+  margin: 10px;
+}

@@ -1,1 +1,16 @@
+<mat-toolbar class="navBar">
+    <div>
+        <a routerLink="/" class="navBarItems">Angular Email</a>
+    </div>
+    <div>
+        <ng-container *ngIf="signedin">
+            <a routerLink="/inbox" class="navBarItems" routerLinkActive="active">Inbox</a>
+            <a routerLink="/signout" class="navBarItems" routerLinkActive="active">Sign Out</a>
+        </ng-container>
+        <ng-container *ngIf="!signedin">
+            <a routerLink="/" class="navBarItems" routerLinkActive="active">Sign In</a>
+            <a routerLink="/signup" class="navBarItems" routerLinkActive="active">Sign Up</a>
+        </ng-container>
+    </div>
+</mat-toolbar>
 <router-outlet></router-outlet>
