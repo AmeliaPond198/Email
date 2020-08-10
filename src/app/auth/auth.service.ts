@@ -53,4 +53,11 @@ export class AuthService {
     )
   }
 
+  signout() {
+    return this.http.post(this.rootUrl + '/auth/signout', {}, { withCredentials: true }).pipe(
+      tap(() => {this.signedin$.next(false)}
+      )
+    )
+  }
+
 }
