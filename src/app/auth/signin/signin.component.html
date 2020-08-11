@@ -1,1 +1,11 @@
-<p>signin works!</p>
+<h3>Sign In</h3>
+<form (ngSubmit)="onSubmit()" class="example-form" [formGroup]="authForm">
+    <app-input inputType="text" label="Username" [control]="authForm.get('username')"></app-input>
+    <app-input inputType="password" label="Password" [control]="authForm.get('password')"></app-input>
+    <mat-error class="matchError" *ngIf="authForm.errors">
+        <ng-container *ngIf="authForm.errors.credentials">
+            Invalid username or password
+        </ng-container>
+    </mat-error>
+        <button mat-flat-button color="primary">Submit</button>
+</form>
