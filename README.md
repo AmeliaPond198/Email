@@ -35,3 +35,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 `{}`
 - Headers:  
 `KEY: Content-Type/VALUE: application/json`
+### Get List of All Emails 
+- URL (GET):  
+`https://api.angular-email.com/emails`  
+### Get an specific Email 
+- URL (GET):  
+`https://api.angular-email.com/emails/:id`  
+### Send an Email 
+- URL (POST):  
+`https://api.angular-email.com/emails`  
+- Body:  
+`{"subject":"Reza", "text":"mypassword", "to":"Reza@gmail.com", "from":"me@me.com"}`  

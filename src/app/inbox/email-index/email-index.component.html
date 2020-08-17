@@ -1,1 +1,10 @@
-<p>email-index works!</p>
+<mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let email of emails">
+        <div>
+            <b>{{email.subject}}</b>
+        </div>
+        <p>
+            {{email.from}}
+        </p>
+    </mat-list-option>
+</mat-selection-list>
