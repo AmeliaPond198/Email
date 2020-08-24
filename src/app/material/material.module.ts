@@ -5,10 +5,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
 
 
 const MaterialComponents = [
-  MatFormFieldModule, MatInputModule,MatButtonModule,MatToolbarModule,MatListModule,MatGridListModule
+  MatFormFieldModule, MatInputModule,MatButtonModule,MatToolbarModule,MatListModule,MatGridListModule,MatIconModule
 ];
 
 
