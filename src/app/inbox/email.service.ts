@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Email } from "./email";
 
-interface EmailSummary{
-  id:string,
-  subject:string,
-  from:string
+interface EmailSummary {
+  id: string,
+  subject: string,
+  from: string
 }
 
 @Injectable({
@@ -15,10 +16,15 @@ export class EmailService {
 
   constructor(private httpClient: HttpClient) { }
 
-getEmails(){
-  return this.httpClient.get<EmailSummary[]>(`${this.rootUrl}/emails`,{
-    withCredentials:true
-  })
-}
+  getEmails() {
+    return this.httpClient.get<EmailSummary[]>(`${this.rootUrl}/emails`, {
+      withCredentials: true
+    })
+  }
 
+  getEmail(id: string) {
+    return this.httpClient.get<Email>(`${this.rootUrl}/emails/${id}`, {
+      withCredentials: true
+    })
+  }
 }
